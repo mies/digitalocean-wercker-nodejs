@@ -9,9 +9,5 @@
       "nodeunit": "0.7.4",
       "supertest" : "0.4.0",
       "mocha" : "1.6.0"
-    },
-    "scripts": {
-      "test": "mocha",
-      "start": "app.js"
     }
   }
