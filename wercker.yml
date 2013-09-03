@@ -38,5 +38,5 @@ deploy:
     - script:
         name: start application
         code: |
-          ssh -i $PRIVATEKEY_PATH -l root mies.io "if [[ \"$(status node-app)\" = *start/running* ]]; then stop node-app -n ; fi"
+          ssh -i $PRIVATEKEY_PATH -l root mies.io "if [[ \"\$(status node-app)\" = *start/running* ]]; then stop node-app -n ; fi"
           ssh -i $PRIVATEKEY_PATH -l root mies.io start node-app
