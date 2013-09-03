@@ -37,4 +37,6 @@ deploy:
         code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no mies.io "cd /var/local/www/ &&  npm install"
     - script:
         name: start application
-        code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no mies.io start node-app
+        code: |
+          ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no mies.io "if [[ \"$(status node-app)\" = *start/running* ]]; then stop node-app -n ; fi"
+          ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no mies.io start node-app
