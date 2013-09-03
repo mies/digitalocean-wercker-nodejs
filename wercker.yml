@@ -34,7 +34,7 @@ deploy:
           scp -i $PRIVATEKEY_PATH app.js package.json root@mies.io:/var/local/www
     - script:
         name: npm install
-        code: ssh -i $PRIVATEKEY_PATH -l root mies.io "cd /var/local/www/ &&  npm install"
+        code: ssh -i $PRIVATEKEY_PATH -l root mies.io "cd /var/local/www/ &&  npm install --production"
     - script:
         name: start application
         code: |
