@@ -27,9 +27,6 @@ deploy:
         content: $FOO_PRIVATE
         overwrite: true
     - script:
-        name: stop application
-        code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no mies.io stop node-app
-    - script:
         name: transfer application
         code: |
           pwd
